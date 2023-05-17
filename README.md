@@ -8,7 +8,7 @@ The action uses GitHub API to get the list of changed files
 
 ### `token`
 
-**Optional** GitHub Token.
+**Required** GitHub Token.
 
 ## Example
 
