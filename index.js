@@ -4,6 +4,10 @@ import * as github from "@actions/github";
 
 async function run() {
   const token = core.getInput("token", { required: true });
+  // skip if the check triggered by a non pull request
+  if (!github.context.payload.pull_request) {
+    return;
+  }
   const pr = github.context.payload.pull_request.number;
   const octokit = github.getOctokit(token);
   const files = [];

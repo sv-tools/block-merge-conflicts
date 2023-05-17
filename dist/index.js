@@ -19,6 +19,10 @@ __nccwpck_require__.r(__webpack_exports__);
 
 async function run() {
   const token = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput("token", { required: true });
+  // skip if the check triggered by a non pull request
+  if (!_actions_github__WEBPACK_IMPORTED_MODULE_2__.context.payload.pull_request) {
+    return;
+  }
   const pr = _actions_github__WEBPACK_IMPORTED_MODULE_2__.context.payload.pull_request.number;
   const octokit = _actions_github__WEBPACK_IMPORTED_MODULE_2__.getOctokit(token);
   const files = [];
