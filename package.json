@@ -1,0 +1,35 @@
+{
+  "name": "create-milestone-action",
+  "version": "1.0.0",
+  "description": "Pure JS GitHub Action to create a Milestone",
+  "keywords": [
+    "GitHub",
+    "Action",
+    "Merge Conflicts"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "all": "npm run fmt && npm run build",
+    "build": "ncc build index.js --license licenses.txt",
+    "fmt": "prettier --write index.js package.json action.yml .github/dependabot.yml .github/workflows/*.yml",
+    "check": "prettier --check index.js package.json action.yml .github/dependabot.yml .github/workflows/*.yml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sv-tools/block-merge-conflicts.git"
+  },
+  "author": "Sergey Vilgelm <sergey@vilgelm.com> (https://vilgelm.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sv-tools/block-merge-conflicts/issues"
+  },
+  "homepage": "https://github.com/sv-tools/block-merge-conflicts#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.36.1",
+    "prettier": "^2.8.8"
+  }
+}

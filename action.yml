@@ -1,0 +1,12 @@
+name: "Block Merge Conflicts"
+description: "Checking the changed files and block if merge conflicts found."
+branding:
+  icon: "check-circle"
+  color: "yellow"
+inputs:
+  token:
+    description: "GitHub Token."
+    required: true
+runs:
+  using: "node16"
+  main: "dist/index.js"
