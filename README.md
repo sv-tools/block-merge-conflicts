@@ -15,4 +15,6 @@ The action uses GitHub API to get the list of changed files
 ```yaml
 - uses: actions/checkout@v3
 - uses: sv-tools/block-merge-conflicts@v1
+  with:
+    token: ${{ secrets.GITHUB_TOKEN }}
 ```
