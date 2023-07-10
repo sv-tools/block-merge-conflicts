@@ -28,7 +28,7 @@ async function run() {
   const files = [];
 
   _actions_core__WEBPACK_IMPORTED_MODULE_1__.startGroup(
-    `Fetching list of changed files for PR#${pr} from Github API`
+    `Fetching list of changed files for PR#${pr} from Github API`,
   );
   try {
     for await (const response of octokit.paginate.iterator(
@@ -36,11 +36,11 @@ async function run() {
         owner: _actions_github__WEBPACK_IMPORTED_MODULE_2__.context.repo.owner,
         repo: _actions_github__WEBPACK_IMPORTED_MODULE_2__.context.repo.repo,
         pull_number: pr,
-      })
+      }),
     )) {
       if (response.status !== 200) {
         throw new Error(
-          `Fetching list of changed files from GitHub API failed with error code ${response.status}`
+          `Fetching list of changed files from GitHub API failed with error code ${response.status}`,
         );
       }
       _actions_core__WEBPACK_IMPORTED_MODULE_1__.info(`Received ${response.data.length} items`);
