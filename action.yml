@@ -8,5 +8,5 @@ inputs:
     description: "GitHub Token."
     required: true
 runs:
-  using: "node16"
+  using: "node18"
   main: "dist/index.js"
