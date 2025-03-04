@@ -2,11 +2,11 @@ name: "Code Analysis"
 
 on:
   push:
+    tags:
+      - v*
     branches:
       - main
   pull_request:
-    branches:
-      - main
   schedule:
     - cron: "0 0 * * 0"
 
