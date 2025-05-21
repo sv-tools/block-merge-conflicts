@@ -2,7 +2,7 @@
 
 Check the changed files and block a Pull Request if the merge conflict markers are found.
 
-The action uses GitHub API to get the list of changed files
+The action uses GitHub API to get the list of changed files.
 
 ## Inputs
 
