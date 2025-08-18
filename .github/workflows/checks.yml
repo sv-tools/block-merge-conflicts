@@ -20,14 +20,14 @@ jobs:
   Check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.2.2 # immutable action, safe to use a version instead of hashtag
+      - uses: actions/checkout@v5.0.0 # immutable action, safe to use a version instead of hashtag
       - run: npm install
       - run: npm run check
 
   Test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.2.2 # immutable action, safe to use a version instead of hashtag
+      - uses: actions/checkout@v5.0.0 # immutable action, safe to use a version instead of hashtag
       - name: Run
         id: create
         uses: ./
