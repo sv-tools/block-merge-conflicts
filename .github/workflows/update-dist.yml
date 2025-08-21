@@ -1,0 +1,35 @@
+name: "Update Dist"
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ format('{0}-{1}', github.workflow, github.ref) }}
+  cancel-in-progress: true
+
+jobs:
+  UpdateDist:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5.0.0 # immutable action
+      - run: npm install
+      - run: npm run all
+      - name: Checking Git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          DELTA="$(git status --short)"
+          if [ -n "${DELTA}" ]
+          then
+            git config --global user.name 'SV Tools Bot'
+            git config --global user.email 'sv.go.tools@gmail.com'
+            git checkout -b update-dist
+            git add .
+            git commit -m "Update Dist"
+            git push origin update-dist
+          fi
