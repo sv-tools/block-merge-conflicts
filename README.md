@@ -13,7 +13,7 @@ The action uses GitHub API to get the list of changed files.
 ## Example
 
 ```yaml
-- uses: actions/checkout@v3
+- uses: actions/checkout@v5
 - uses: sv-tools/block-merge-conflicts@v2
   with:
     token: ${{ secrets.GITHUB_TOKEN }}
